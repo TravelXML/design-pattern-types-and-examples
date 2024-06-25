@@ -2,8 +2,10 @@
 Top 10 Design Pattern — Types, Examples
 
 ## Overview
+![1_Q8AUrqqdk1cPkf1_2y_N_g](https://github.com/TravelXML/design-pattern-types-and-examples/assets/8361967/4488201c-5d5e-45b7-91ad-9bf19d1a717f)
 
 A “design pattern” is a reusable solution to a commonly occurring problem within a given context in software design. Design patterns are formalized best practices that the programmer can use to solve common problems when designing an application or system.
+
 
 ## Key Characteristics of Design Patterns:
 #### Reusable:  Design patterns provide solutions that are not tied to a specific problem, making them reusable in different scenarios.
