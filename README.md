@@ -6,8 +6,8 @@ Top 10 Design Pattern — Types, Examples
 A “design pattern” is a reusable solution to a commonly occurring problem within a given context in software design. Design patterns are formalized best practices that the programmer can use to solve common problems when designing an application or system.
 
 ## Key Characteristics of Design Patterns:
-### Reusable:  Design patterns provide solutions that are not tied to a specific problem, making them reusable in different scenarios.
-### Proven: These patterns have been evolved and proven over time by the developer community, ensuring they are reliable.
+### Reusable: ###  Design patterns provide solutions that are not tied to a specific problem, making them reusable in different scenarios.
+### Proven: ### These patterns have been evolved and proven over time by the developer community, ensuring they are reliable.
 ### Expressive: They provide a standard terminology and are specific to particular scenarios, making them easy to understand and communicate.
 
 This repository provides a collection of design pattern examples implemented in PHP. Each directory contains the implementation of a specific design pattern along with a detailed explanation, use case, and instructions on how to run the examples. Design patterns are essential in software engineering as they provide proven solutions to common design problems.
