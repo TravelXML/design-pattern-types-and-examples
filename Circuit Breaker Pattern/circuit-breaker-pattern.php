@@ -1,29 +1,52 @@
 <?php
-//Implementing a basic circuit breaker in PHP
-// to handle failures when making API calls.
+class CircuitBreaker {
+    private $failureCount = 0;
+    private $failureThreshold;
+    private $retryTimePeriod;
+    private $lastFailureTime;
 
-class LoadBalancer {
-    private $servers;
-    private $currentServer;
-
-    public function __construct(array $servers) {
-        $this->servers = $servers;
-        $this->currentServer = 0;
+    public function __construct($failureThreshold, $retryTimePeriod) {
+        $this->failureThreshold = $failureThreshold;
+        $this->retryTimePeriod = $retryTimePeriod;
     }
 
-    public function getServer() {
-        $server = $this->servers[$this->currentServer];
-        $this->currentServer = ($this->currentServer + 1) % count($this->servers);
-        return $server;
+    public function call($serviceFunction) {
+        if ($this->isOpen()) {
+            echo "Circuit is open. Request blocked.\n";
+            return false;
+        }
+
+        try {
+            $serviceFunction();
+            $this->reset();
+        } catch (Exception $e) {
+            $this->recordFailure();
+            echo "Service call failed. Error: " . $e->getMessage() . "\n";
+        }
     }
-}
 
-// Example usage
-$servers = ["Server1", "Server2", "Server3"];
-$loadBalancer = new LoadBalancer($servers);
+    private function isOpen() {
+        if ($this->failureCount >= $this->failureThreshold) {
+            if ((time() - $this->lastFailureTime) > $this->retryTimePeriod) {
+                $this->halfOpen();
+                return false;
+            }
+            return true;
+        }
+        return false;
+    }
 
-// Simulating incoming requests
-for ($i = 0; $i < 10; $i++) {
-    echo $loadBalancer->getServer() . "\n";
+    private function recordFailure() {
+        $this->failureCount++;
+        $this->lastFailureTime = time();
+    }
+
+    private function reset() {
+        $this->failureCount = 0;
+    }
+
+    private function halfOpen() {
+        $this->failureCount = $this->failureThreshold / 2;
+    }
 }
 ?>
