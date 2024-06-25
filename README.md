@@ -1,11 +1,5 @@
-# design-pattern-types-and-examples
-Top 10 Design Pattern — Types, Examples
-Sure! Here's a comprehensive `README.md` file for the "Design Patterns Types and Examples" repository.
-
-### README.md
-
-```markdown
 # Design Patterns Types and Examples
+Top 10 Design Pattern — Types, Examples
 
 ## Overview
 
