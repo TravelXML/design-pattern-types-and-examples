@@ -1,6 +1,3 @@
-Sure! Here is a `README.md` file for your PHP API Gateway implementation.
-
-```markdown
 # PHP API Gateway
 
 ## Overview
@@ -128,9 +125,3 @@ $gateway->routeRequest();
 - In a real-world scenario, replace the `file_get_contents` calls with proper HTTP client requests (e.g., using `cURL` or a library like Guzzle) to communicate with the microservices.
 - The URLs for the microservices (`http://user-service` and `http://order-service`) should be actual endpoints of your microservices.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
-
-This `README.md` file provides a comprehensive overview of the project, including installation instructions, usage examples, and implementation details.
