@@ -1,9 +1,4 @@
 <?php
-
-//Step 3: Example Usage
-//Finally, we demonstrate how to use the UserRepository class 
-//to manage user data.
-
 include 'UserRepositoryInterface.php';
 include 'UserRepository.php';
 

@@ -1,10 +1,4 @@
 <?php
-//Step 2: Implement the User Repository
-// Next, we implement the UserRepository 
-//class that interacts with the data source. For simplicity, 
-// we use an associative array to store user data.
-
-
 class UserRepository implements UserRepositoryInterface {
     private $users = [];
 

@@ -1,39 +1,23 @@
 <?php
-class Logger {
+class Singleton {
     private static $instance = null;
+    private $data;
 
-    // Private constructor to prevent instantiation
+    // Private constructor to prevent direct object creation
     private function __construct() {
-        // Initialize logging mechanism (e.g., open log file)
+        $this->data = "Singleton Data";
     }
 
-    // Prevent cloning of the instance
-    private function __clone() { }
-
-    // Prevent unserializing of the instance
-    private function __wakeup() { }
-
-    // Public method to provide access to the single instance
+    // Static method to get the single instance of the class
     public static function getInstance() {
-        if (self::$instance === null) {
-            self::$instance = new Logger();
+        if (self::$instance == null) {
+            self::$instance = new Singleton();
         }
         return self::$instance;
     }
 
-    // Method to log messages
-    public function log($message) {
-        // Log the message (e.g., write to a file)
-        echo $message . PHP_EOL;
+    public function getData() {
+        return $this->data;
     }
 }
-
-// Usage
-$logger = Logger::getInstance();
-$logger->log("This is a log message.");
-
-$anotherLogger = Logger::getInstance();
-$anotherLogger->log("This is another log message.");
-
-// Both $logger and $anotherLogger refer to the same instance
 ?>
