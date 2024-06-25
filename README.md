@@ -115,6 +115,6 @@ This repository provides a collection of design pattern examples implemented in 
    ```sh
    php client.php
    
-[Find thedetail Article here!]
+[Find thedetail Article here!](https://apige.medium.com/design-pattern-types-cases-and-examples-6a3e4f26926b)
    ```
 
