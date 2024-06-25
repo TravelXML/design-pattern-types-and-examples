@@ -4,40 +4,36 @@
 
 
 // Define the new library interface
-interface NewLibraryInterface {
-    public function newRequest();
-}
-
-// Define the old library class with an incompatible interface
-class OldLibraryClass {
-    public function oldRequest() {
-        echo "Old request method\n";
+class Adaptee {
+    public function specificRequest() {
+        return "Specific request.";
     }
 }
 
-// Define the adapter class that implements the new interface and adapts the old class
-class LibraryAdapter implements NewLibraryInterface {
-    private $oldLibrary;
 
-    public function __construct(OldLibraryClass $oldLibrary) {
-        $this->oldLibrary = $oldLibrary;
+
+class Adapter implements Target {
+    private $adaptee;
+
+    public function __construct(Adaptee $adaptee) {
+        $this->adaptee = $adaptee;
     }
 
-    public function newRequest() {
-        $this->oldLibrary->oldRequest();
+    public function request() {
+        return $this->adaptee->specificRequest();
     }
 }
 
-// Client code that uses the new interface
-function clientCode(NewLibraryInterface $library) {
-    $library->newRequest();
+
+
+function clientCode(Target $target) {
+    echo $target->request();
 }
 
-// Usage
-$oldLibrary = new OldLibraryClass();
-$adapter = new LibraryAdapter($oldLibrary);
-
-// Now the client can use the new interface to interact with the old library
+$adaptee = new Adaptee();
+$adapter = new Adapter($adaptee);
 clientCode($adapter);
+
+
 
 ?>
