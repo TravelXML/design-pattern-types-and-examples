@@ -16,7 +16,7 @@ This project demonstrates a basic implementation of the API Gateway Pattern in P
 ```
 .
 ├── ApiGateway.php
-├── bootstrap.php
+├── client.php
 └── README.md
 ```
 
