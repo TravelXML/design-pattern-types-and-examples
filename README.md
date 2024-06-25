@@ -23,7 +23,7 @@ This repository provides a collection of design pattern examples implemented in 
 
 **Use Case:** Integrating legacy code with new systems.
 
-[More Details](./Adapter%20Pattern)
+[More Details](./Adapter%20Pattern%20)
 
 ## Caching Pattern
 
